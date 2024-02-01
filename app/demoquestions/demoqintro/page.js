@@ -26,11 +26,11 @@ export const demoqintro = () => {
           alt="Image"
           src="https://cdn.animaapp.com/projects/653fd83724d590a7aa0e69a7/releases/65836c2a44d595eb7d3c2a67/img/image-139@2x.png"
         />
-        <div className="div"><Link href="/signIn.html">Back</Link>
+        <div className="div"><Link href="/signIn">Back</Link>
 </div>
       </div>
       <div className="frame-2">
-        <div className="text-wrapper-4"><Link href= "/demoquestions/dqmORs.html" >Continue </Link> </div>
+        <div className="text-wrapper-4"><Link href= "/demoquestions/dqmORs" >Continue </Link> </div>
         <img
           className="img"
           alt="Image"

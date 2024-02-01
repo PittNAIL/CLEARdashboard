@@ -6,7 +6,12 @@ const dbConnect = () => {
   }
 
   mongoose.set("strictQuery", false);
-  mongoose.connect(process.env.DB_URI);
+  console.log(process.env.DB_URL); 
+ const db = mongoose.connect(process.env.DB_URL);
+
+  mongoose.connection.on('error', err => {
+    console.log(err.toString());
+  });
 };
 
 export default dbConnect;

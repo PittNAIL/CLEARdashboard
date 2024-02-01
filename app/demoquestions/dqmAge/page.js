@@ -13,10 +13,10 @@ export const dqmAge = () => {
           alt="Image"
           src="https://cdn.animaapp.com/projects/653fd83724d590a7aa0e69a7/releases/65836c2a44d595eb7d3c2a67/img/image-139@2x.png"
         />
-        <div className="text-wrapper-2"><Link href="/demoquestions/dqmORs.html">Back</Link></div>
+        <div className="text-wrapper-2"><Link href="/demoquestions/dqmORs">Back</Link></div>
       </div>
     
-      <a href="/demoquestions/dqmIdentity.html">
+      <a href="/demoquestions/dqmIdentity">
       <div className="frame-3-1">
       <span class="tooltip-container">
       <span class="tooltip-content">Anyone under 18 should see a hearing care professional</span>

@@ -1,13 +1,9 @@
 
 import React from "react";
-
+import axios from "axios";
 import ListProducts from "@/components/products/ListProducts";
-import { promises as fs } from 'fs';
-//import supportscolor from 'node_modules/supports-color'; 
-//import supportscolor1 from 'node_modules/supports-preserve-symlinks-flag'; 
-//import queryString from "query-string";
-import LayoutSearch from '@/components/layouts/LayoutSearch';
 
+import queryString from "query-string";
 
 const getProducts = async (searchParams) => {
   const urlParams = {
@@ -19,23 +15,18 @@ const getProducts = async (searchParams) => {
     "ratings[gte]": searchParams.ratings,
   };
 
-  //const searchQuery = queryString.stringify(urlParams);
+  const searchQuery = queryString.stringify(urlParams);
 
-  //const { data } = await axios.get(`${process.env.API_URL}/api/products`);
-  const file = await fs.readFile('data/products.json', 'utf8'); // reading from JSON file
-  const data = JSON.parse(file); 
+  const { data } = await axios.get(
+    `${process.env.API_URL}/api/products?${searchQuery}`
+  );
   return data;
-}
+};
 
-const ProductsView = async (searchParams) => {
+const ProductsView = async ({ searchParams }) => {
   const productsData = await getProducts(searchParams);
-  return (
-    <LayoutSearch>
-    <>
-  <ListProducts data={productsData} />
-</>
-</LayoutSearch>
-  )
-  };
+
+  return <ListProducts data={productsData} />;
+};
 
 export default ProductsView;
