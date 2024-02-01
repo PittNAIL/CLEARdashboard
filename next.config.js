@@ -5,10 +5,23 @@ const nextConfig = {
   },
   env: {
     API_URL: "http://localhost:3000",
-    DB_URI: "mongodb://localhost:27017/clEAR",
+    DB_URI: "mongodb://localhost:27017/cleardashboard",
+    DB_URL: "mongodb+srv://cdash:clEARdashboard2024@atlascluster.hrctky4.mongodb.net/cleardashboard", 
+
+    CLOUD_NAME: "",
+    CLOUDINARY_API_KEY: "",
+    CLOUDINARY_API_SECRET: "",
+
+    STRIPE_PUBLIC_KEY: "",
+    STRIPE_PRIVATE_KEY: "",
+
+    STRIPE_WEBHOOK_SECRET: "",
+
+    NEXTAUTH_SECRET: "codingwithabbas",
   },
-   distDir: "build",
-  output: 'export',
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 module.exports = nextConfig;

@@ -8,16 +8,6 @@ import {PropertyWrapperCS} from "@/components/layouts/PropertyWrapperCS.jsx"
 import {PropertyWrapperT} from "@/components/layouts/PropertyWrapperT.jsx"
 import {PropertyWrapperW} from "@/components/layouts/PropertyWrapperW.jsx"
 
-
-
-
-
-import {PropertyVariantWrapper} from "@/components/PropertyVariantWrapper.jsx"
-import {Frame410} from "@/components/layouts/Frame410"
-import {Frame412} from "@/components/layouts/Frame412"
-import {Frame413} from "@/components/layouts/Frame413"
-import {Frame414} from "@/components/layouts/Frame414"
-
 const Filters = () => {
   let queryParams;
 

@@ -1,9 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import Search from "./Search";
 import Image from "next/image";
+import CartContext from "@/context/CartContext";
+import { useSession } from "next-auth/react";
+import AuthContext from "@/context/AuthContext";
 
 const Header = () => {
+  // const { user, setUser } = useContext(AuthContext);
+
+  const { data } = useSession();
+
+  useEffect(() => {
+    if (data) {
+      setUser(data?.user);
+    }
+  }, [data]);
+
+  const { cart } = useContext(CartContext);
+  const cartItems = cart?.cartItems;
+
   return (
     <header className="bg-white py-2 border-b">
       <div className="container max-w-screen-xl mx-auto px-4">
@@ -23,7 +41,7 @@ const Header = () => {
 
           <div className="flex items-center space-x-2 ml-auto">
             <Link
-              href="/favorites"
+              href="/cart/Cart"
               className="px-3 py-2 inline-block text-center"
             >
               <i className="text-gray-400 w-5 fa fa-shopping-cart"></i>
